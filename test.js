@@ -27,4 +27,11 @@ describe('defaults', function() {
     expect(el).to.be.eql({ __data__: { foo: 'baz', a: 1, b: 3 }, state: { foo: 'baz', a: 1, b: 3 } })
   })
 
+  it('should return data/state if no opts', function() {
+    var el = { __data__: { foo: 'baz' }, state: { foo: 'boo', a: 1 } }
+      
+    var state = defaults(el)
+    expect(el).to.be.eql({ __data__: { foo: 'baz', a: 1 }, state: { foo: 'baz', a: 1 } })
+  })
+
 })
